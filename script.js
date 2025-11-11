@@ -87,8 +87,8 @@ shareBtn.addEventListener('click', async () => {
     try {
       await navigator.share({
         title: "Undangan Pernikahan",
-        text: textToShare,
-        url: generatedLink.value
+        text: textToShare
+        // ⚠️ Tidak perlu "url" agar tidak muncul dua kali di pesan
       });
     } catch (err) {
       console.warn("Batal membagikan:", err);
@@ -97,3 +97,4 @@ shareBtn.addEventListener('click', async () => {
     alert("Web Share API tidak didukung di perangkat ini.");
   }
 });
+
