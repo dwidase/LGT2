@@ -1,37 +1,201 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #fdf6f0;
-  color: #112250;
+/* ========================================================= */
+/* ====================== [ FONT FAMILY ] =================== */
+/* ========================================================= */
+@font-face {
+  font-family:'Montserrat';
+  src: url('assets/font/montserrat-v30-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
+/* ===== PENGATURAN DASAR ===== */
+/* === Sistem Font Global === */
+:root {
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+/* Variabel Warna (Ganti dengan warna brand Anda) */
+:root {
+  --warna-cream: #f2f0e4;
+  --warna-hitam: #000000;
+  --warna-orange: #ff8500;
+  --warna-putih: #ffffff;
+}
+
+/* Mengatur ulang beberapa style dasar browser */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* GANTI BLOK INI: */
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: var(--warna-cream);
+	color: var(--warna-hitam);
+	min-height: 80vh; 
+	padding: 20px;
+	min-height: 80vh; /* Turunkan sedikit agar logo tidak menempel di atas */
+	padding: 20px;
+}
+
+/* ===== KOTAK UTAMA ===== */
 .container {
-  max-width: 400px;
-  margin: auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%; 
+    margin: 20px auto 20px auto;
+    background: var(--warna-putih);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  color: var(--warna-orange); /* Menggunakan warna brand Anda */
+  margin-bottom: 20px;
+  font-family: var(--sans-serif);
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/* ===== BAGIAN FORM INPUT ===== */
+#form-container {
+  display: flex;
+  flex-direction: column; /* Menyusun label, input, tombol ke bawah */
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #555;
 }
 
 input[type="text"] {
+  background: #f2f1f0;
   width: 100%;
-  padding: 8px;
-  margin: 10px 0;
+  padding: 12px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--warna-hitam);
+  font-size: 1em;
+  margin: 15px 0 10px 0;
 }
 
+/* ===== PENGATURAN TOMBOL ===== */
 button {
-  padding: 10px 15px;
-  margin: 5px 0;
-  background: #112250;
-  color: #fff;
+  padding: 12px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-button:hover {
-  background: #0d1a4b;
+button:active {
+  transform: scale(0.98); /* Efek 'ditekan' */
 }
+
+/* Tombol utama (Buat Link) */
+#generateBtn {
+  background: var(--warna-orange); /* Warna brand Anda */
+  color: var(--warna-putih); /* Teks putih agar kontras */
+}
+
+#generateBtn:hover {
+  background: #e67500; /* Warna hover (bisa diganti) */
+  color: var(--warna-hitam);
+}
+
+/* Tombol sekunder (Salin & Bagikan) */
+#copyBtn, #shareBtn {
+  background: var(--warna-orange);
+  color: var(--warna-putih);
+}
+
+#copyBtn:hover, #shareBtn:hover {
+  background: #e67500;
+  color: var(--warna-hitam);
+}
+
+/* ===== BAGIAN HASIL LINK ===== */
+#link-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#link-container p {
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+}
+
+/* Input link (readonly) */
+#generatedLink {
+  background-color: #f2f1f0; /* Abu-abu muda */
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  margin: 0px 0 10px 0;
+}
+
+/* ===== BAGIAN TEKS UNDANGAN (HASIL AKHIR) ===== */
+#invitationText {
+  max-width: 400px;
+  width: 100%;
+  margin: 20px auto;
+  background: var(--warna-putih);
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  
+  white-space: pre-line;
+  text-align: left;
+  font-size: 0.8em;
+  color: var(--warna-hitam);
+  line-height: 1.6;
+
+  /* === TAMBAHKAN SALAH SATU DARI INI === */
+  /*word-break: break-word;*/
+  /* ATAU (ini lebih modern dan seringkali lebih baik) */
+  overflow-wrap: break-word;
+}
+
+/* ... (CSS Anda yang sudah ada di atas) ... */
+
+/* ===== STYLE UNTUK HEADER BRANDING BARU ===== */
+/* GANTI BLOK INI: */
+	.header-branding {
+	/* position: absolute top; <== HAPUS BARIS INI */
+	text-align: center;
+	/* margin: 20px auto 10px auto; <== HAPUS BARIS INI */
+    margin-bottom: 30px; /* Cukup beri margin bawah untuk jarak ke container */
+}
+
+/* GANTI BLOK INI: */
+.brand-logo {
+	max-width: 20px;
+	height: auto;
+	/* margin-bottom: 20px; <== Ganti dengan ini */
+	display: block;
+	/* margin: -20px auto 20px auto; <== HAPUS BARIS INI */
+	margin: 0 auto 20px auto; /* Margin standar: atas 0, kiri/kanan auto, bawah 20px */
+}
+
+/* GANTI BLOK INI: */
+.tagline {
+	font-family: var(--font-sans);
+	font-size: 1.3em;
+	font-weight: bold;
+	color: var(--warna-orange);
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	/* margin: 40px auto -150px auto; <== HAPUS BARIS INI */
+	margin: 0 auto; /* Cukup ini, karena jarak ke bawah sudah diatur di .header-branding */
+}
+
+/* ... (CSS Anda yang sudah ada di bawahnya) ... */
