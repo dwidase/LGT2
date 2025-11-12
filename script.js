@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.querySelector('.container').innerHTML = `<p style="color: red;">❌ Proyek dengan ID ${proyek} tidak ditemukan atau gagal dimuat.</p>`;
         }
     } else {
-        document.querySelector('.container').innerHTML = `<p style="color: orange;">⚠️ Silakan tentukan ID proyek di URL (contoh: ?proyek=1).</p>`;
+        document.querySelector('.container').innerHTML = `<p style="color: orange;">⚠️ Silakan tentukan ID proyek di URL.</p>`;
     }
 });
 
