@@ -1,0 +1,136 @@
+/* ========================================================= */
+/* =================== FONT & COLOR VARIABLES ================ */
+/* ========================================================= */
+:root {
+  /* Ambil dari branding utama */
+  --font-sans: 'Montserrat', sans-serif;
+  --warna-cream: #f2f0e4;
+  --warna-hitam: #000000;
+  --warna-orange: #ff8500;
+  --warna-putih: #ffffff;
+}
+
+/* Mengatur ulang style browser */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== PENGATURAN BODY DAN CONTAINER UTAMA ===== */
+body {
+  font-family: var(--font-sans), sans-serif;
+  background-color: var(--warna-cream);
+  color: var(--warna-hitam);
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* Mengatur tata letak agar panel terlihat profesional */
+.admin-container {
+  max-width: 1000px; /* Lebar yang cukup untuk tabel */
+  margin: 0 auto; /* Centering */
+  background: var(--warna-putih);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Mengatur tampilan header */
+h1 {
+  text-align: center;
+  color: var(--warna-orange);
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h2 {
+  color: #333;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+/* ===== FORM LOGIN & TAMBAH PROYEK ===== */
+#loginForm, #adminPanel {
+  /* Memastikan form login dan panel admin berada di tengah jika terpisah */
+  margin: 0 auto;
+}
+
+label {
+  font-weight: 600;
+  color: #555;
+  display: block; /* Membuat label berada di barisnya sendiri */
+  margin-top: 10px;
+}
+
+input[type="text"], input[type="password"] {
+  background: #f2f1f0;
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: var(--warna-orange);
+  outline: none;
+}
+
+/* ===== PENGATURAN TOMBOL ===== */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  background: var(--warna-orange);
+  color: var(--warna-putih);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-bottom: 20px; /* Jarak setelah tombol */
+}
+
+button:hover {
+  background: #e67500; /* Sedikit lebih gelap dari orange */
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ===== STYLE TABEL DAFTAR PROYEK ===== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 0.9em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+thead th {
+  background-color: var(--warna-orange);
+  color: var(--warna-putih);
+  font-weight: bold;
+  border-color: var(--warna-orange);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Garis zebra */
+}
+
+tbody tr:hover {
+  background-color: #f0f0f0; /* Efek hover pada baris */
+}
